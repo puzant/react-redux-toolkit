@@ -15,3 +15,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-300px);
+  }
+}
+
+.slide-animation {
+  animation-name: fadeIn;
+  animation-duration: .5s;
+}
