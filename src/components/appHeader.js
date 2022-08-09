@@ -10,8 +10,10 @@ import Divider from '@mui/material/Divider'
 import MessageIcon from '@mui/icons-material/Message'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import MenuIcon from '@mui/icons-material/Menu'
+import FaceIcon from '@mui/icons-material/Face'
 
-export const AppHeader = () => {
+export const AppHeader = ({ onToggle }) => {
   const dispatch = useDispatch()
   const { cartItems } = useSelector((store) => store.cart)
   const { isAuthenticated, username } = useSelector((store) => store.user)
@@ -21,7 +23,9 @@ export const AppHeader = () => {
     <div>
       <div className="flex justify-between items-center p-4">
         <NavLink to='/'><div className="text-4xl text-red-500">Looksie</div></NavLink>
-        <div className='flex gap-4 items-center'>
+        <div onClick={onToggle} className='block sm:hidden'><MenuIcon sx={{fontSize: 35, color: 'rgb(99 102 241)'}} /></div>
+
+        <div className='hidden sm:flex gap-4 items-center'>
           <StyledInput className="" placeholder="What are you looking for" />
           <NavLink to='/shopping-cart'>
             <div className='relative cursor-pointer'>
@@ -35,6 +39,7 @@ export const AppHeader = () => {
           </NavLink>
           <NotificationsIcon sx={{ color: '#a6a5a2', fontSize: 30}} />
           <MessageIcon sx={{ color: '#a6a5a2', fontSize: 30}} />
+          <FaceIcon sx={{ color: '#a6a5a2', fontSize: 30}} />
           
           <div>
             {isAuthenticated ? 
@@ -55,7 +60,7 @@ export const AppHeader = () => {
         </div>
       </div>
 
-      <div className="flex justify-between p-4">
+      <div className="hidden sm:flex justify-between p-4">
         {
           ['Fashion & Accessories', 'Beatury & Bath', 'Home & Living', 'Party Supplies & Books', 'Electronics & Accessories', 'Food & Drink', 'Pet Supplies', 'Sport Equipment']
             .map(category => (
