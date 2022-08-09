@@ -10,12 +10,9 @@ export const Home = () => {
   
   return (
     <div>
-
-      <div className='mt-10 w-11/12 m-auto flex items-center justify-between px-10 py-4'>
-        <div className='flex items-center gap-2'>
-          <div className='font-bold text-xl'>Recommendations in</div>
-          <EastIcon />
-        </div>
+      <div className='mt-10 w-full sm:w-11/12 m-auto flex items-center gap-2 px-10 py-4'>
+        <div className='font-bold text-xl'>Recommendations in</div>
+        <EastIcon />
       </div>
 
       <div className='flex flex-col items-center gap-4'>

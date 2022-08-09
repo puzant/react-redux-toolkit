@@ -16,23 +16,22 @@ export const ProductDetails = () => {
   
   return (
     <div>
-      <div className='flex justify-around p-4 m-auto mt-10 w-10/12'>
-        <img className='w-5/12 ' src={product.image} />
-        <div className='flex flex-col gap-8 p-4 w-3/5'>
-          <div>
-            <div className='flex justify-between items-center'>
-              <div className='flex items-center gap-2'>
-                <img className='h-12 w-12 border-2 border-black rounded-full' src='https://cdn.iconscout.com/icon/free/png-256/fendi-3215400-2673818.png' />
-                <div className='text-3xl'>Fendi</div>
-              </div>
-              <div className='border border-indigo-500 rounded-lg p-2'><IosShareIcon sx={{ color: 'rgb(99 102 241)', fontSize: 25}} /></div>
+      <div className='flex flex-wrap sm:flex-nowrap justify-around p-4 m-auto mt-10 w-full sm:w-10/12'>
+        <img className='w-full sm:w-1/2' src={product.image} />
+        <div className='flex flex-col gap-8 p-4'>
+          <div className='flex justify-between items-center'>
+            <div className='flex items-center gap-2'>
+              <img className='h-12 w-12 border-2 border-black rounded-full' src='https://cdn.iconscout.com/icon/free/png-256/fendi-3215400-2673818.png' />
+              <div className='text-3xl'>Fendi</div>
             </div>
-            <div className='mt-2 text-lg font-bold'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+            <div className='border border-indigo-500 rounded-lg p-2'><IosShareIcon sx={{ color: 'rgb(99 102 241)', fontSize: 25}} /></div>
           </div>
+          <div className='mt-2 text-lg font-bold'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+
 
           <div className='flex flex-col gap-1'>
             <div className="text-2xl text-indigo-500 font-medium">{product.price} KWD</div>
-            <div className="">
+            <div className="flex flex-col gap-2">
               <div className='flex gap-2 items-center'>
                 <div className='font-bold text-xl'>Color: </div>
                 <div>Yellow, Red, Green</div>
@@ -43,6 +42,7 @@ export const ProductDetails = () => {
                 <div className='rounded-lg p-2.5 w-12 h-11 cursor-pointer bg-green-400'></div>
               </div>
             </div>
+
             <div className='mt-2 flex flex-col gap-2'>
               <div className="flex justify-between">
                 <div className="flex gap-2 items-center">
@@ -69,21 +69,21 @@ export const ProductDetails = () => {
         </div>
       </div>
 
-      <div className='mt-10 w-11/12 m-auto flex flex-col px-10 py-4'>
+      <div className='mt-10 w-full sm:w-11/12 m-auto flex flex-col px-10 py-4'>
         <div className='font-bold text-xl'>Item Description</div>
         <div className='mt-2'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
         <div className='mt-2 text-indigo-500'>Read more</div>
       </div>
 
-      <div className='w-11/12 m-auto mt-5 px-10 py-4'><Divider /></div>
+      <div className='w-full sm:w-11/12 m-auto mt-5 px-10 py-4'><Divider /></div>
 
-      <div className='mt-5 w-11/12 m-auto flex flex-col px-10 py-4'>
+      <div className='mt-5 w-full sm:w-11/12 m-auto flex flex-col px-10 py-4'>
         <div className='font-bold text-xl'>Delivery</div>
         <div className='mt-2'>Estimated Delivery: <span className='font-bold'>1 - 2 Days</span></div>
         <div className='mt-2'>Delivery Charge: <span className='font-bold'>2 KWD</span></div>
       </div>
 
-      <div className='mt-10 w-11/12 m-auto flex items-center justify-between px-10 py-4'>
+      {/* <div className='mt-10 w-11/12 m-auto flex items-center justify-between px-10 py-4'>
         <div className='font-bold text-xl'>Similar Items on Looksie</div>        
       </div>
 
@@ -94,7 +94,7 @@ export const ProductDetails = () => {
             <div className='absolute bottom-0 left-0 bg-white rounded-lg text-center w-auto m-2 p-2 opacity-80'>2,038,937 KWD</div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
