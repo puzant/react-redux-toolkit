@@ -19,7 +19,7 @@ export const Home = () => {
       </div>
 
       <div className='flex flex-col items-center gap-4'>
-        <div className='flex justify-center gap-4'>
+        <div className='flex flex-wrap justify-center gap-4'>
           {products.map(product => (
             <NavLink key={product.id} to={`/product-details/${product.id}`}>
               <div className='cursor-pointer relative rounded-xl w-48'>
@@ -39,11 +39,11 @@ export const Home = () => {
       <div className='bg-[#f7f7f7] p-10 mt-12'>
         <div className="text-4xl text-center mt-12 font-bold">Popular Categories</div>
 
-        <div className='flex justify-between mt-4'>
+        <div className='flex flex-wrap sm:flex-nowrap justify-between mt-4'>
           {['Kitchen & Dining', 'Baby Accessories', 'Mixed Media & Collage', 'Fragrances & Scented Oils', 'Braclets', 'Cookware & Bakeware']
             .map(category => (
               <div className='cursor-pointer flex flex-col items-center gap-4'>
-                <img className="rounded-full p-8" src='https://i0.wp.com/theinterioreditor.com/wp-content/uploads/2019/03/Cuckooland-Vox-4-You-Dining-Table-with-Hidden-Container-in-White-3564280.jpg?resize=940%2C977' />
+                <img className="rounded-full p-8 w-40 sm:w-full" src='https://i0.wp.com/theinterioreditor.com/wp-content/uploads/2019/03/Cuckooland-Vox-4-You-Dining-Table-with-Hidden-Container-in-White-3564280.jpg?resize=940%2C977' />
                 <div className='w-36 text-center'>{category}</div>
               </div>
             ))}
@@ -58,7 +58,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className='flex justify-center gap-8'>
+      <div className='flex flex-wrap justify-center gap-8'>
         {shops.map(shop => (
           <div className="cursor-pointer shadow-lg flex flex-col rounded-xl w-72">
             <img className='h-40 w-full rounded-t-xl' src={shop.image} />
@@ -86,20 +86,7 @@ export const Home = () => {
         <div className='font-bold text-xl'>Baked Goods</div>        
       </div>
 
-      <div className='flex justify-center gap-4'>
-        {[1,2,3,4,5,6].map(product => (
-          <div className='cursor-pointer relative rounded-xl w-48'>
-            <img className='h-44 rounded-xl w-full' src='https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dessert-main-image-molten-cake-0fbd4f2.jpg?quality=90&resize=768,574' />
-            <div className='absolute bottom-0 left-0 bg-white rounded-lg text-center w-auto m-2 p-2 opacity-80'>2,038,937 KWD</div>
-          </div>
-        ))}
-      </div>
-
-      <div className='mt-24 w-11/12 m-auto flex items-center justify-between px-10 py-4'>
-        <div className='font-bold text-xl'>Baked Goods</div>        
-      </div>
-
-      <div className='flex justify-center gap-4'>
+      <div className='flex flex-wrap justify-center gap-4'>
         {[1,2,3,4,5,6].map(product => (
           <div className='cursor-pointer relative rounded-xl w-48'>
             <img className='h-44 rounded-xl w-full' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIYCnI27WR3z0TMnVyD0un8WU07fxOzij66OzSY81BePrkIydUNV3ujOreRFwjDuw-428&usqp=CAU' />

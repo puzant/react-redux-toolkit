@@ -1,10 +1,13 @@
+import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Routes from './routes/routes'
 
-import { AppHeader } from 'components/appHeader'
+import { AppHeader, MobileMenu } from 'components'
 
 function App() {
+  const [isOpen, setIsOpen] = React.useState(false)
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: { 
@@ -17,8 +20,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <AppHeader />
-        <Routes />
+      {isOpen && <MobileMenu isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />}
+        <div className={`${isOpen && 'hidden'}`}>
+          <AppHeader onToggle={() => setIsOpen(!isOpen)} />
+          <Routes />
+        </div>
       </Router>
     </QueryClientProvider>
   );
