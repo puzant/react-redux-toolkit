@@ -13,9 +13,9 @@ export const ShoppingCart = () => {
   const { cartItems, total } = useSelector((store) => store.cart)
 
   return (
-    <div className='w-11/12 mt-10 m-auto flex gap-4'>
-      <div className='w-3/5 p-4 rounded-lg shadow-lg border-2 border-slate-300'>
-        <div className='flex justify-between items-center'>
+    <div className='flex flex-wrap sm:flex-nowrap w-11/12 mt-10 m-auto gap-4'>
+      <div className='w-full sm:w-3/5 p-4 rounded-lg shadow-lg border-2 border-slate-300'>
+        <div className='flex flex-wrap justify-between gap-2 items-center'>
           <div className='text-2xl font-medium'>My Cart</div>
           <div className='flex gap-2 text-slate-500'>
             <AccessTimeIcon />
@@ -34,12 +34,13 @@ export const ShoppingCart = () => {
             :
           <div className='flex flex-col gap-4 mt-4'>
             {cartItems.map(product => (
-              <div key={product.id} className="flex gap-4">
-                <img className="w-52 h-40 rounded-lg border-2 border-indigo-200" src={product.image} />
+              <div key={product.id} className="flex flex-col sm:flex-row  gap-4">
+                <img className="w-48 h-40 rounded-lg border-2 border-indigo-200" src={product.image} />
                 <div className="flex flex-col">
-                  <div className='text-lg font-medium'>{product.name}</div>
+                  <div className='text-lg font-medium'><span className="text-indigo-500">{product.name}</span></div>
                   <div className='text-lg'>{product.price} KWD</div>
-                  <div className='text-slate-500'>{product.description}</div>
+                  <div className='text-lg'>Color: Red</div>
+                  <div className=' text-slate-500'>{product.description}</div>
                 </div>
                 
                 <div onClick={() => dispatch(removeItemFromCart(product))} className='cursor-pointer'>
@@ -57,7 +58,7 @@ export const ShoppingCart = () => {
         }
       </div>
 
-        <div className='w-2/5 p-4 rounded-lg shadow-lg border-2 border-slate-300'>
+        <div className='w-full sm:w-2/5 p-4 rounded-lg shadow-lg border-2 border-slate-300'>
           <div className='text-2xl font-medium'>Payment Details</div>
           <div className='mt-2 flex gap-4'>
             <img className='h-12' src='https://i.pinimg.com/736x/ca/0c/70/ca0c7039ddcf224cb6b075cb59e4677e.jpg' />

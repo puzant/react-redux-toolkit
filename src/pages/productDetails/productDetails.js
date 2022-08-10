@@ -83,18 +83,18 @@ export const ProductDetails = () => {
         <div className='mt-2'>Delivery Charge: <span className='font-bold'>2 KWD</span></div>
       </div>
 
-      {/* <div className='mt-10 w-11/12 m-auto flex items-center justify-between px-10 py-4'>
+      <div className='mt-10 w-full sm:w-11/12 m-auto flex items-center justify-between px-10 py-4'>
         <div className='font-bold text-xl'>Similar Items on Looksie</div>        
       </div>
 
-      <div className='flex justify-center gap-4'>
+      <div className='flex flex-wrap justify-center gap-4'>
         {[1,2,3,4,5,6].map(product => (
           <div className='cursor-pointer relative rounded-xl w-48'>
             <img className='h-44 rounded-xl w-full' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIYCnI27WR3z0TMnVyD0un8WU07fxOzij66OzSY81BePrkIydUNV3ujOreRFwjDuw-428&usqp=CAU' />
             <div className='absolute bottom-0 left-0 bg-white rounded-lg text-center w-auto m-2 p-2 opacity-80'>2,038,937 KWD</div>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   )
 }
