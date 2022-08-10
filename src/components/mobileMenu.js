@@ -30,7 +30,7 @@ export const MobileMenu = ({ onToggle, isOpen }) => {
       <div className="flex justify-between items-center mt-4">
         <div className="mt-4 flex gap-4">
           <NavLink to='/shopping-cart'>
-            <div className='relative cursor-pointer'>
+            <div onClick={onToggle} className='relative cursor-pointer'>
               <LocalMallIcon sx={{ color: '#a6a5a2', fontSize: 30}} />
                 {!!cartItems.length && 
                   <div className='flex justify-center items-center absolute bottom-5 left-3 text-white bg-indigo-500 border-2 border-white h-6 w-6 rounded-full text-xs font-medium'>
